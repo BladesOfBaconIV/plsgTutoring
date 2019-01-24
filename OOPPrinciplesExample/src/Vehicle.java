@@ -8,6 +8,7 @@ public abstract class Vehicle {
     // Instance variables that will be shared by all subclasses
     // speed of the vehicle in Km/h
     protected double speed;
+
     // number of passengers in the vehicle
     protected int numPassengers;
 
@@ -50,6 +51,10 @@ public abstract class Vehicle {
 
     public int getNumPassengers() {
         return this.numPassengers;
+    }
+
+    public void setNumPassengers(int numPassengers) {
+        this.numPassengers = numPassengers;
     }
 
 }
