@@ -65,7 +65,7 @@ public class SortingExample {
      */
     public static void printArray(int[] array) {
         String arrayString = "[";
-        for (int n: array){
+        for (int n: array) {
             arrayString += " " + n;
         }
         arrayString += " ]";
@@ -79,13 +79,14 @@ public class SortingExample {
      * @param array, int[]: array to be sorted
      */
     public static void selectionSort(int[] array) {
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) { // for value starting at 0
             int smallestIndex = i;
-            for (int j = i+1; j < array.length; j++) {
-                if (array[j] < array[smallestIndex]) {
+            for (int j = i+1; j < array.length; j++) { // for all values after
+                if (array[j] < array[smallestIndex]) { // getting the smallest value
                     smallestIndex = j;
                 }
             }
+            // swap current value at array[i] with smallest
             int smallestValue = array[smallestIndex];
             array[smallestIndex] = array[i];
             array[i] = smallestValue;
@@ -101,9 +102,11 @@ public class SortingExample {
     public static void bubbleSort(int[] array) {
         int n = array.length;
         boolean swapped;
+        // keep running till nothing is swapped
         do {
             swapped = false;
             for (int i = 1; i < n; i++) {
+                // if the previous value is larger, swap its position with current value
                 if (array[i - 1] > array[i]) {
                     int temp = array[i];
                     array[i] = array[i - 1];
@@ -111,12 +114,13 @@ public class SortingExample {
                     swapped = true;
                 }
             }
-            n -= 1;
+            n -= 1; // last value will always be largest with this sort, so only need to go to second last next time
         }while (swapped);
     }
 
     /*
      * Implementation of the quick sort algorithm
+     * Works by recursively splitting the array until sorting is trivial (2 element array)
      * O(n*log(n)) average, O(n*log(n)) best, O(n^2) worst
      *
      * @param array, int[]: array to be sorted
@@ -135,20 +139,22 @@ public class SortingExample {
     }
 
     /*
-     * Function for partitioning the array for quick sort
+     * Function for partitioning and array for quick sort
      *
      * @param arr, int[]: array to be partitioned
      * @param start, int: start of the partition
      * @param end, int: end of the partition
      */
     public static int partition(int[] arr, int start, int end) {
-        int pivot = arr[end];
+        int pivot = arr[end]; // pivot value to sort by
 
-        for(int i=start; i<end; i++){
+        // easiest to consider when only 2 elements
+        // or 2 sorted elements and trying to insert the lest element in the correct place
+        for(int i = start; i<end; i++){
             if(arr[i]<pivot){
-                int temp= arr[start];
-                arr[start]=arr[i];
-                arr[i]=temp;
+                int temp = arr[start];
+                arr[start] = arr[i];
+                arr[i] = temp;
                 start++;
             }
         }
