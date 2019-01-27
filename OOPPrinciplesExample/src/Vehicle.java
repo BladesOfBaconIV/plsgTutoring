@@ -21,7 +21,7 @@ public abstract class Vehicle {
 
     /*
      * Method to convert miles to km
-     * It is static as we don't need a vehicle object to do this conversion
+     * It is static as we shouldn't need a vehicle object to do this conversion
      * @param miles, double: The distance in miles to be converted
      * @return km, double: The distance in km
      */
@@ -31,7 +31,7 @@ public abstract class Vehicle {
 
     /*
      * Method to convert km to miles
-     * It is static as we don't need a vehicle object to do this conversion
+     * It is static as we shouldn't need a vehicle object to do this conversion
      * @param km, double: The distance in km to be converted
      * @return miles, double: The distance in miles
      */
