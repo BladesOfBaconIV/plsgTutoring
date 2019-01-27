@@ -3,7 +3,7 @@ Example Programs for CE4702 PLSG tutoring
 
 ---
 
-# OOPPrinciplesExample
+## OOPPrinciplesExample
 Contains an example program demonstrating the 4 main principles of Object Oriented Programmimg
 
 - Inheritance: There is a parent class (Vehicle) which is then inherited by 3 children classes (Car, Plane,Bike)
@@ -12,5 +12,5 @@ Contains an example program demonstrating the 4 main principles of Object Orient
 - Encapsulation: Instance variables are private but accessible via getter and setter methods
 ---
 
-# AlgorithmExample
+## AlgorithmExample
 Contains an example demonstrating some array sorting algorithms, as well as their order and a test showing their speed.
